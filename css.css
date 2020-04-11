@@ -73,10 +73,9 @@ h2 {
     font-size: 3vw;
 }
 
-.p{
+.p {
     text-align: right !important;
 }
-
 
 .link {
     width: 45%;
@@ -90,8 +89,8 @@ h2 {
     margin-top: 50px;
 }
 
-.left{
-    float:left;
+.left {
+    float: left;
     height: 225px;
     margin: 7px 7px 7px 0;
 }
@@ -205,21 +204,19 @@ nav {
 }
 
 @media print {
-    #navigation, nav, #sidebarL, #sidebarR, #video, #header  {
-        width: 0;
-        height: 0;
+    #navigation, nav, #sidebarL, #sidebarR, 
+    #video, #header, #footer, #menu {
+        display: none;
     }
-    #content{
-        font-size:14px ;
+    #content {
+        background-color: white;
+        font-family: Arial;
+        color: #000;
+        font-size: 14px;
+        font-weight: 400;
         width: 100%;
     }
-    #footer, #menu{
-        font-size: 0;
-        width: 0;
-        height: 0;
-    }
-    h2{
+    h2 {
         font-size: 0;
     }
-     
 }
