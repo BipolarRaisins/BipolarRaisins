@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Блочный макет</title>
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+
+<body>
+    <div id="container">
+        
+        <div id="sidebarL">
+            <h3> Найти сумму ряда 1+Х+ Х2/2!+ Х3/3!+ Х4/4!+...</h3>
+            <form name="form">
+                Введите значение x (x < 1): <input type="number" name="num1" size=10><br><br>
+                <input type="button" value="Вычислить" onClick="Cycle(form)"><br><br>
+                Сумма ряда равна <input type="text" name="res" size=10><br><br>
+                <input type="reset" value=Очистить>
+            </form>
+        </div>
+
+        <div id="sidebarR">
+            <img class="gif" src="Небо.jpg">
+            <img class="gif" src="ФЗ.gif">
+            <img class="gif" src="Звездопад.gif">
+        </div>
+
+        <div id="content">
+            <h3> Площадь параллелограмма по основанию и высоте параллелограмма </h3>
+            <img src="area1.png">
+            <form name="form1">
+                Введите значение стороны: <input type="number" name="num1" size=10><br><br>
+                Введите значение высоты: <input type="number" name="num2" size=10><br><br>
+                <input type="button" value="Вычислить" onClick="square1(form1)"><br><br>
+                Площадь параллелограмма равна <input type="text" name="res" size=10><br><br>
+                <input type="reset" value=Очистить>
+            </form>
+    
+    
+            <h3> Площадь параллелограмма по стороне и высоте, опущенной на эту сторону </h3>
+            <img src="area2.png">
+            <form name="form2">
+                Введите значение стороны: <input type="number" name="num1" size=10><br><br>
+                Введите значение высоты, опущенной на эту сторону: <input type="number" name="num2" size=10><br><br>
+                <input type="button" value="Вычислить" onClick="square2(form2)"><br><br>
+                Площадь параллелограмма равна <input type="text" name="res" size=10><br><br>
+                <input type="reset" value=Очистить>
+            </form>
+    
+            <h3> Площадь параллелограмма по двум сторонам и углу между ними </h3>
+            <img src="area3.png">
+            <form name="form3">
+                Введите значение первой стороны: <input type="number" name="num1" size=10><br><br>
+                Введите значение второй стороны: <input type="number" name="num2" size=10><br><br>
+                Введите значение угла: <input type="number" name="num3" size=10><br><br>
+                <input type="button" value="Вычислить" onClick="square3(form3)"><br><br>
+                Площадь параллелограмма равна <input type="text" name="res" size=10><br><br>
+                <input type="reset" value=Очистить>
+            </form>
+    
+            <h3> Площадь параллелограмма по двум диагоналям и углу между этими диагоналями </h3>
+            <img src="area4.png">
+            <form name="form4">
+                Введите значение первой диагонали: <input type="number" name="num1" size=10><br><br>
+                Введите значение второй диагонали: <input type="number" name="num2" size=10><br><br>
+                Введите значение угла: <input type="number" name="num3" size=10><br><br>
+                <input type="button" value="Вычислить" onClick="square4(form4)"><br><br>
+                Площадь параллелограмма равна <input type="text" name="res" size=10><br><br>
+                <input type="reset" value=Очистить>
+            </form>
+    
+            <h3> Площадь параллелограмма по вписанной окружности и стороне </h3>
+            <img src="area5.png">
+            <form name="form5">
+                Введите значение стороны: <input type="number" name="num1" size=10><br><br>
+                Введите значение радиуса вписанной окружности: <input type="number" name="num2" size=10><br><br>
+                <input type="button" value="Вычислить" onClick="square5(form5)"><br><br>
+                Площадь параллелограмма равна <input type="text" name="res" size=10><br><br>
+                <input type="reset" value=Очистить>
+            </form>
+    
+            <h3> Площадь параллелограмма по вписанной окружности и углу между сторонами </h3>
+            <img src="area6.png">
+            <form name="form6">
+                Введите значение угла между соронами: <input type="number" name="num1" size=10><br><br>
+                Введите значение радиуса вписанной окружности: <input type="number" name="num2" size=10><br><br>
+                <input type="button" value="Вычислить" onClick="square6(form6)"><br><br>
+                Площадь параллелограмма равна <input type="text" name="res" size=10><br><br>
+                <input type="reset" value=Очистить>
+            </form>
+
+        </div>
+
+
+
+        <div id="clear"> </div>
+
+       
+    </div>
+</body>
+
+</html>
