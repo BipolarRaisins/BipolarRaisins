@@ -1,6 +1,6 @@
 var imgstr = ['fon3.jpg', '2.png', '3.png', '4.png', '5.png'];
-var imgx = [800, 100, 21, 100, 5];
-var imgy = [600, 75, 35, 85, 5];
+var imgx = [800, 75, 21, 100, 15];
+var imgy = [600, 75, 35, 85, 50];
 var imgs = [];
 var youx = 100, youy = 400;
 var youstepx = 4, youstepy = 3;
@@ -13,52 +13,22 @@ var time = 30;
 var dispID;
 var lvl = 0;
 var name = prompt('Введите ваше имя')
-var person = {
-	gamer,
-	experience,
-}
 
 
-function drawTable() {
-	
-	var array = [];
-	person.gamer = name;
-	person.experience = score;
-	alert(person.experience)
-	array.push(person);
-	localStorage.setItem('arr', JSON.stringify(array));
-	var element = document.getElementById('text');
-	element.innerHTML = '';
-	var tb = document.createElement('TABLE');
-	element.appendChild(tb);
-	tb.id = "tablichka";
-	var tbod = document.createElement('TBODY');
-	tb.appendChild(tbod);
-	var tr = document.createElement("TR");
-	tbod.appendChild(tr);
-	var td1 = document.createElement("TD");
-	td1.innerHTML = "Место";
-	tr.appendChild(td1);
-	var td2 = document.createElement("TD");
-	td2.innerHTML = "Имя";
-	tr.appendChild(td2);
-	var td3 = document.createElement("TD");
-	td3.innerHTML = "Опыт";
-	tr.appendChild(td3);
-	document.getElementById('tablichka').appendChild(tbod);
-	for (var i = 0; i < array.length; i++) {
-		var tr = document.createElement("TR");
-		tbod.appendChild(tr);
-		var td1 = document.createElement("TD");
-		td1.innerHTML = i + 1;
-		tr.appendChild(td1);
-		var td2 = document.createElement("TD");
-		td2.innerHTML = array[i].gamer;
-		tr.appendChild(td2);
-		var td3 = document.createElement("TD");
-		td3.innerHTML = array[i].experience;
-		tr.appendChild(td3);
+function display_table() {
+	let html = "<table id=\"gen\"><th>ИМЯ</th><th>ОЧКИ</th>";
+	for (let i = 0; i < localStorage.length; i++) {
+		html += "<tr aling=\"center\">";
+		for (let j = 0; j < 1; j++) {
+			let key = localStorage.key(i)
+			html += "<td>" + localStorage.key(i) + "</td>";
+			html += "<td>" + localStorage.getItem(key) + "</td>"
+		}
+		html += "</tr>";
 	}
+	html += "</table>";
+
+	document.getElementById("top").innerHTML = html;
 }
 
 function cls_ene_bul(i, j) {
@@ -80,10 +50,11 @@ function cls_you_ebul(j) {
 
 	if ((x2 + imgx[4] > x1) && (x1 + imgx[1] > x2) && (y2 + imgy[4] > y1) && (y1 + imgy[1] > y2)) {
 		endgame++;
-		ebuls.splice(0, ebuls.length)
+		ebuls.splice(0, ebuls.length);
 		if (endgame == 3) {
-			localStorage.setItem(JSON.stringify(name), JSON.stringify(score))
+			localStorage.setItem(name, score);
 			alert('ОГО! Вы набрали целых ' + score + ' очков. Обновите страницу чтобы начать новую игру.');
+			display_table();
 			return 1;
 		}
 		timer()
@@ -131,22 +102,6 @@ function move_bullets() {
 		if (buls[i].y < -40)
 			buls.splice(i, 1);
 	}
-
-
-	//var bul_del = 0;
-	//for (var i = buls.length - 1; i >= 0; i--) {
-	//	bul_del = 0;
-	//	buls[i].y -= (7 + lvl);
-	//	for (var j = enemies.length - 1; j >= 0; j--) {
-	//		if (bul_del == 0)
-	//			if (cls_ene_bul(j, i) == 1)
-	//				bul_del = 1;
-	//	}
-	//
-	//	if (bul_del == 0)
-	//		if (buls[i].y < -40)
-	//			buls.splice(i, 1);
-	//}
 }
 
 function move_ebullets() {
@@ -248,20 +203,20 @@ function stop() {
 }
 
 function resume() {
-	timer()
+	timer();
 }
 
 function newgamer() {
 	clearInterval(dispID);
-	localStorage.setItem(JSON.stringify(name), JSON.stringify(score))
-	name = prompt('Введите новое имя')
-	score = 0
-	endgame = 0
-	ImagesInit()
-	timer()
+	localStorage.setItem(name, score);
+	name = prompt('Введите новое имя');
+	score = 0;
+	endgame = 0;
+	ImagesInit();
+	timer();
 }
 
-//window.addEventListener("load", draw, true);
+
 
 
 
